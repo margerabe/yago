@@ -13,9 +13,12 @@ class FetchInsurance
       }
     )
 
-    # Quote.create(response.body)
+    hash = JSON.parse(response.body)['data'].transform_keys { |key| key.to_s.underscore }
 
-    JSON.parse(response.body)
+    quote = @company.quotes.build(hash)
+    quote.save
+
+    { quote: quote }
   end
 
   private

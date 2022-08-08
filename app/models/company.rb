@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+  has_many :quotes
+
   validates :annual_revenue, presence: true
   validates :enterprise_number, format: { with: /\A0.{9}/ }, presence: true
   validates :nacebel_codes, inclusion: { in: Constants::Nacebel::CODES }
