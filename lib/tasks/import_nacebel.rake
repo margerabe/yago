@@ -9,7 +9,8 @@ class ImportNacebel
     filepath = 'lib/tasks/NACEBEL_2008.csv'
 
     CSV.foreach(filepath, headers: :first_row) do |row|
-      puts "#{row['Level']}"
+      byebug
+      puts "#{row['Code']}"
     end
   end
 end

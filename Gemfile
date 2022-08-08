@@ -28,6 +28,7 @@ group :development, :test do
   gem 'faker', '~> 2.21'
   gem 'rubocop', '~> 1.31', '>= 1.31.1'
   gem "bullet"
+  gem 'byebug', '~> 11.1', '>= 11.1.3'
 end
 
 group :development do
