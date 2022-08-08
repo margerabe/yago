@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="title">Create your company to obtain a quote</div>
+
+    <div class="form form-horizontal">
+      <%= simple_form_for @company do |f| %>
+
+        <%= f.input :annual_revenue %>
+        <%= f.input :enterprise_number %>
+        <%= f.input :legal_name %>
+        <%= f.input :natural_person %>
+        <%= f.input :deductible_formula, collection: %w[small medium large] %>
+        <%= f.input :coverage_ceiling_formula, collection: %w[small large] %>
+        <%= select_tag "nacebel_codes[]", options_for_select(Constants::Nacebel::CODES), { multiple: true } %>
+        <%= f.submit class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
