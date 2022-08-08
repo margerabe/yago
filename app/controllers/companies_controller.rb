@@ -5,11 +5,13 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @service_result = FetchInsurance.new(company: @company).call
   end
 
   def create
     @company = Company.new(company_params)
     @company.nacebel_codes = params['nacebel_codes']
+
     if @company.save
       redirect_to company_path(@company)
     else
