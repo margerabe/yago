@@ -2,14 +2,35 @@
   <div class="row text-center">
     <div class="title">Fill in the below form to obtain a quote</div>
 
-    <div class="form form-horizontal">
-      <%= simple_form_for @company do |f| %>
+    <div class="form">
+      <%= form_with url: companies_path do |f| %>
 
-        <%= f.input :annual_revenue %>
-        <%= f.input :enterprise_number %>
-        <%= f.input :legal_name %>
-        <%= f.input :natural_person %>
+        <%= f.label :email, "Email" %>
+        <%= f.text_field :email %>
+        <%= f.label :phone_number, "Phone Number" %>
+        <%= f.text_field :phone_number %>
+        <%= f.label :address, "Address" %>
+        <%= f.text_field :address %>
+        <%= f.label :first_name, "First Name" %>
+        <%= f.text_field :first_name %>
+        <%= f.label :last_name, "Last Name" %>
+        <%= f.text_field :last_name %>
+
+        <%= f.label :annual_revenue, "Annual Revenue" %>
+        <%= f.text_field :annual_revenue %>
+
+        <%= f.label :enterprise_number, "Enterprise Number" %>
+        <%= f.text_field :enterprise_number %>
+
+        <%= f.label :legal_name, "Legal Name" %>
+        <%= f.text_field :legal_name %>
+
+        <%= f.label :natural_person, "Natural Person" %>
+        <%= f.text_field :natural_person %>
+
+        <%= f.label :nacebel_codes, "Nacebel Codes" %>
         <%= select_tag "nacebel_codes[]", options_for_select(Constants::Nacebel::CODES), { multiple: true } %>
+
         <%= f.submit class: "btn btn-primary" %>
       <% end %>
     </div>

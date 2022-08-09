@@ -1,6 +1,15 @@
 <h1>Companies#show</h1>
-<p>Find me in app/views/companies/show.html.erb</p>
-<%= @company.nacebel_codes %>
 
+<h2>Lead info</h2>
+<%= @lead.email %>
+<%= @lead.first_name %>
+<%= @lead.last_name %>
+
+<h2>Company</h2>
+<%= @company.legal_name %>
+<%= @company.nacebel_codes %>
+<%= @company.lead_id %>
+
+<h2>Quote</h2>
 <%= @service_result[:quote] %>
 
