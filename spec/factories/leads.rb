@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :lead do
-    email { "MyString" }
-    phone_number { "MyString" }
-    address { "MyString" }
-    first_name { "MyString" }
-    last_name { "MyString" }
+    email           { Faker::Internet.email }
+    phone_number    { Faker::PhoneNumber.cell_phone_in_e164 }
+    address         { Faker::Address.full_address }
+    first_name      { Faker::Name.first_name }
+    last_name       { Faker::Name.last_name }
   end
 end
