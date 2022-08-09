@@ -1,4 +1,5 @@
 class Company < ApplicationRecord
+  belongs_to :lead
   has_many :quotes
 
   validates :annual_revenue, presence: true
