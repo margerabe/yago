@@ -1,6 +1,6 @@
 <h1>Companies#show</h1>
 
-<h2>Lead info</h2>
+<h2>Your contact info</h2>
 <%= @lead.email %>
 <%= @lead.first_name %>
 <%= @lead.last_name %>
@@ -10,6 +10,12 @@
 <%= @company.nacebel_codes %>
 <%= @company.lead_id %>
 
-<h2>Quote</h2>
-<%= @service_result[:quote] %>
+<h2>Quotes</h2>
+<% @company.quotes.each do |quote| %>
+  <div>
+    <%= quote.created_at  %>
+    <%= quote.gross_premiums  %>
+  </div>
+<% end %>
 
+<%= link_to  "New quote", path %>
