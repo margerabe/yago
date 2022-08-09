@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_09_095606) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_09_100401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,6 +24,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_095606) do
     t.string "coverage_ceiling_formula", default: "small"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "lead_id"
+    t.index ["lead_id"], name: "index_companies_on_lead_id"
   end
 
   create_table "leads", force: :cascade do |t|
@@ -48,5 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_095606) do
     t.index ["company_id"], name: "index_quotes_on_company_id"
   end
 
+  add_foreign_key "companies", "leads"
   add_foreign_key "quotes", "companies"
 end
