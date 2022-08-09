@@ -9,7 +9,7 @@ class FetchInsurance
       body: raw_params.to_json,
       headers: {
         'Content-type' => 'application/json',
-        'X-Api-Key' => 'fABF1NGkfn5fpHuJHrbvG3niQX6A1CO53ftF9ASD'
+        'X-Api-Key' => ENV['API_KEY']
       }
     )
 
