@@ -32,6 +32,10 @@ group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3'
 end
 
+group :test do
+  gem 'webmock', '~> 3.17', '>= 3.17.1'
+end
+
 group :development do
   gem "web-console"
 end
