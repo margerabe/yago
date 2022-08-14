@@ -5,7 +5,7 @@ class CreateQuotes < ActiveRecord::Migration[7.0]
       t.integer :coverage_ceiling, null: false
       t.integer :deductible, null: false
       t.string :quote_id, null: false, unique: true
-      t.json :gross_premiums, null: false
+      t.jsonb :gross_premiums, null: false
 
       t.timestamps
     end

@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Quote, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:quote) { build(:quote) }
+
+  describe 'validations' do
+    it 'is valid with valid attributes' do
+      expect(quote).to be_valid
+    end
+  end
 end

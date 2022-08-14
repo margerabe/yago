@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_100401) do
     t.integer "coverage_ceiling", null: false
     t.integer "deductible", null: false
     t.string "quote_id", null: false
-    t.json "gross_premiums", null: false
+    t.jsonb "gross_premiums", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "company_id"
