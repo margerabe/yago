@@ -6,7 +6,6 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find(params[:id])
     @lead = @company.lead
-    @service_result = FetchInsurance.new(company: @company).call
   end
 
   def create
@@ -15,6 +14,7 @@ class CompaniesController < ApplicationController
     @company.lead_id = @lead.id
 
     if @company.save
+      @service_result = FetchInsurance.new(company: @company).call
       redirect_to company_path(@company)
     else
       render :new

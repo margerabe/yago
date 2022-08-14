@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe CompaniesController, type: :controller do
+  include_context 'with insurance api mocked requests'
+
   describe '#create' do
     context 'with given params' do
       let(:params) do
@@ -25,6 +27,8 @@ describe CompaniesController, type: :controller do
       end
 
       before do
+        fetch_insurance_succeed
+
         post :create, params: params
       end
 
