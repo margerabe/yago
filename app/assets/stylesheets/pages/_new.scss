@@ -9,22 +9,18 @@ body {
 }
 
 .form {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 40px;
 }
 
-.form-group {
-  display: flex;
-  margin-bottom: 10px;
+label, select {
+  margin-top: 10px;
+  display: block;
 }
 
-.form-label {
-  text-align: left;
-  margin-top: auto;
-  width: 130px;
-}
-
-.form-control {
-  width: 250px;
-  text-align: center;
+select {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 220px;
 }

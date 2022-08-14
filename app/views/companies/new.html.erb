@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row text-center">
-    <div class="title">Fill in the below form to obtain a quote</div>
+    <div class="title">Fill in below form to obtain a quote</div>
 
     <div class="form">
       <%= form_with url: companies_path do |f| %>
@@ -18,20 +18,17 @@
 
         <%= f.label :annual_revenue, "Annual Revenue" %>
         <%= f.text_field :annual_revenue %>
-
         <%= f.label :enterprise_number, "Enterprise Number" %>
         <%= f.text_field :enterprise_number %>
-
         <%= f.label :legal_name, "Legal Name" %>
         <%= f.text_field :legal_name %>
-
-        <%= f.label :natural_person, "Natural Person" %>
+        <%= f.label :natural_person, "Natural Person (true/false)" %>
         <%= f.text_field :natural_person %>
 
         <%= f.label :nacebel_codes, "Nacebel Codes" %>
         <%= select_tag "nacebel_codes[]", options_for_select(Constants::Nacebel::CODES), { multiple: true } %>
 
-        <%= f.submit class: "btn btn-primary" %>
+        <%= f.submit "Obtain quote", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
