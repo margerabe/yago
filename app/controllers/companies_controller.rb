@@ -10,22 +10,9 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    @lead = Lead.create(
-      email: params['email'],
-      phone_number: params['phone_number'],
-      address: params['address'],
-      first_name: params['first_name'],
-      last_name: params['last_name']
-    )
-
-    @company = Company.new(
-      annual_revenue: params['annual_revenue'],
-      enterprise_number: params['enterprise_number'],
-      legal_name: params['legal_name'],
-      natural_person: params['natural_person'],
-      nacebel_codes: params['nacebel_codes'],
-      lead_id: @lead.id
-    )
+    @lead = Lead.create!(lead_params)
+    @company = Company.new(company_params)
+    @company.lead_id = @lead.id
 
     if @company.save
       redirect_to company_path(@company)
@@ -35,6 +22,10 @@ class CompaniesController < ApplicationController
   end
 
   private
+
+  def lead_params
+    params.require(:lead).permit(:first_name, :last_name, :email, :phone_number, :address)
+  end
 
   def company_params
     params.require(:company).permit(:annual_revenue, :enterprise_number, :legal_name, :natural_person,
