@@ -24,11 +24,11 @@ class CompaniesController < ApplicationController
   private
 
   def lead_params
-    params.require(:lead).permit(:first_name, :last_name, :email, :phone_number, :address)
+    params.permit(:first_name, :last_name, :email, :phone_number, :address)
   end
 
   def company_params
-    params.require(:company).permit(:annual_revenue, :enterprise_number, :legal_name, :natural_person,
-                                    :deductible_formula, :coverage_ceiling_formula, :nacebel_codes, nacebel_codes: [])
+    params.permit(:annual_revenue, :enterprise_number, :legal_name, :natural_person,
+                  :deductible_formula, :coverage_ceiling_formula, :nacebel_codes, nacebel_codes: [])
   end
 end
