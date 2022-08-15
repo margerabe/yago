@@ -1,4 +1,4 @@
-<h1>Running the project<h1>
+<h1>Running the project</h1>
 
 This project runs on Ruby 3.0.3 / Rails 7.0.3 / PostgreSQL DB
 
