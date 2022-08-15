@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FetchInsurance
   def initialize(company:)
     @company = company

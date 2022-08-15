@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Company, type: :model do
@@ -14,7 +16,7 @@ RSpec.describe Company, type: :model do
     end
 
     it 'is not valid with incorrect enterprise number' do
-      company.enterprise_number = "1234567890"
+      company.enterprise_number = '1234567890'
       expect(company).not_to be_valid
     end
 

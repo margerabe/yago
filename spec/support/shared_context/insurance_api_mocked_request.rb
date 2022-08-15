@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_context 'with insurance api mocked requests' do
   let(:fetch_insurance_response_succeed) do
     {

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Lead < ApplicationRecord
   has_one :company
 
